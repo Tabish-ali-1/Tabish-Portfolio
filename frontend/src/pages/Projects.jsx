@@ -102,15 +102,12 @@ const Projects = ({ filter: propFilter, setFilter: propSetFilter }) => {
     { id: null, label: 'All Projects' },
     { id: 'frontend', label: 'Frontend' },
     { id: 'backend', label: 'Backend' },
-    { id: 'database', label: 'Database' },
   ];
 
   const displayedLiveProjects = filter === 'frontend'
     ? allLiveProjects.filter(p => frontendProjectsList.includes(p.name))
     : filter === 'backend'
     ? allLiveProjects.filter(p => backendProjectsList.includes(p.name))
-    : filter === 'database'
-    ? allLiveProjects.filter(p => databaseProjectsList.includes(p.name))
     : allLiveProjects;
 
   useEffect(() => {

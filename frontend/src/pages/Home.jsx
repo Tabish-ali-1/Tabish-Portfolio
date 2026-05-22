@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Code, Layout, Database, ArrowUp } from 'lucide-react';
+import { ArrowRight, Code, Layout, ArrowUp } from 'lucide-react';
 import About from './About';
 import Projects from './Projects';
 import Resume from './Resume';
@@ -115,7 +115,7 @@ const Home = () => {
         >
           <h2 className="text-3xl font-bold mb-12 text-center">What I Do</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Frontend */}
             <div
               onClick={() => {
@@ -147,23 +147,6 @@ const Home = () => {
               <h3 className="text-xl font-bold mb-3">Backend Development</h3>
               <p className="text-text-muted">
                 Creating robust APIs and server-side logic using Node.js, Express, and implementing secure authentication.
-              </p>
-            </div>
-
-            {/* Database */}
-            <div
-              onClick={() => {
-                setProjectFilter('database');
-                scrollToSection('projects');
-              }}
-              className="bg-surface p-8 rounded-2xl border border-border-custom hover:border-accent/50 transition-colors group cursor-pointer"
-            >
-              <div className="h-12 w-12 rounded-lg bg-accent/10 flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
-                <Database size={24} />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Database Management</h3>
-              <p className="text-text-muted">
-                Designing optimized schemas and managing data using MongoDB, Mongoose, and connecting to cloud clusters.
               </p>
             </div>
           </div>
