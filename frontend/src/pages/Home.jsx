@@ -9,6 +9,7 @@ import Contact from './Contact';
 const Home = () => {
   const [projectFilter, setProjectFilter] = useState(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [headerAnim, setHeaderAnim] = useState('entry');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,7 +68,48 @@ const Home = () => {
             </motion.div>
             
             <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6">
-              Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Tabish</span>
+              <motion.span
+                className="inline-block origin-bottom"
+                initial={{ y: 120, scaleY: 1.3, scaleX: 0.7, opacity: 0 }}
+                animate={
+                  headerAnim === 'entry'
+                    ? {
+                        y: [120, -40, 10, -5, 0],
+                        scaleY: [1.3, 0.8, 1.1, 0.95, 1],
+                        scaleX: [0.7, 1.2, 0.9, 1.05, 1],
+                        opacity: [0, 1, 1, 1, 1],
+                      }
+                    : {
+                        y: [0, -8, 0],
+                        scaleY: 1,
+                        scaleX: 1,
+                        opacity: 1,
+                      }
+                }
+                transition={
+                  headerAnim === 'entry'
+                    ? {
+                        duration: 1.2,
+                        times: [0, 0.4, 0.7, 0.9, 1],
+                        ease: 'easeOut',
+                      }
+                    : {
+                        y: {
+                          duration: 3,
+                          ease: 'easeInOut',
+                          repeat: Infinity,
+                          repeatType: 'reverse',
+                        },
+                      }
+                }
+                onAnimationComplete={() => {
+                  if (headerAnim === 'entry') {
+                    setHeaderAnim('loop');
+                  }
+                }}
+              >
+                Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Tabish</span>
+              </motion.span>
             </motion.h1>
             
             <motion.p variants={itemVariants} className="text-xl md:text-2xl text-text-muted max-w-2xl leading-relaxed">
