@@ -96,16 +96,16 @@ const AdminDashboard = () => {
       </div>
 
       {/* Tabs */}
-      <div className="flex space-x-1 mb-10 bg-surface rounded-xl p-1.5 border border-slate-800 max-w-md">
+      <div className="flex space-x-1 mb-10 bg-surface rounded-xl p-1 sm:p-1.5 border border-slate-800 max-w-md w-full">
         {tabs.map(({ key, label, icon: Icon }) => (
           <button
             key={key}
             onClick={() => setActiveTab(key)}
-            className={`flex-1 flex items-center justify-center py-2.5 px-4 rounded-lg text-sm font-medium transition-all ${
+            className={`flex-1 flex items-center justify-center py-2 sm:py-2.5 px-2 sm:px-4 rounded-lg text-xs sm:text-sm font-medium transition-all ${
               activeTab === key ? 'bg-primary text-white shadow' : 'text-slate-400 hover:text-white'
             }`}
           >
-            <Icon size={15} className="mr-1.5" /> {label}
+            <Icon size={14} className="mr-1 sm:mr-1.5 shrink-0" /> {label}
           </button>
         ))}
       </div>

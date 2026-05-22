@@ -66,7 +66,7 @@ const Home = () => {
               Available for new opportunities
             </motion.div>
             
-            <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
+            <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6">
               Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Tabish</span>
             </motion.h1>
             
@@ -82,7 +82,7 @@ const Home = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="lg:col-span-5 flex justify-center lg:justify-end"
           >
-            <div className="relative group w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
+            <div className="relative group w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
               {/* Outer Glowing Background Orbs */}
               <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-3xl blur opacity-30 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
               
