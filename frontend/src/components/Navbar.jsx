@@ -44,7 +44,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScrollSpy = () => {
-      const sections = ['about', 'projects', 'contact'];
+      const sections = ['about', 'projects', 'resume', 'contact'];
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
       
       if (scrollTop < 150) {
@@ -76,6 +76,7 @@ const Navbar = () => {
     { name: 'Home', id: 'home' },
     { name: 'About', id: 'about' },
     { name: 'Projects', id: 'projects' },
+    { name: 'Resume', id: 'resume' },
     { name: 'Contact', id: 'contact' },
   ];
 

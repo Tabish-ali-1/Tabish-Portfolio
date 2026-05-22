@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Code, Layout, Database, ArrowUp } from 'lucide-react';
 import About from './About';
 import Projects from './Projects';
+import Resume from './Resume';
 import Contact from './Contact';
 
 const Home = () => {
@@ -172,6 +173,11 @@ const Home = () => {
       {/* Projects Section */}
       <section id="projects" className="scroll-mt-20 border-t border-border-custom/40">
         <Projects filter={projectFilter} setFilter={setProjectFilter} />
+      </section>
+
+      {/* Resume Section */}
+      <section id="resume" className="scroll-mt-20 border-t border-border-custom/40">
+        <Resume />
       </section>
 
       {/* Contact Section */}
